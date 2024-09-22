@@ -1,0 +1,103 @@
+/* Basic Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Cast Card Styling */
+.cast_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px; /* Fixed width */
+  height: 320px; /* Fixed height */
+  margin: 20px;
+  padding: 15px; /* Increased padding for more space */
+  background: linear-gradient(
+    135deg,
+    rgba(27, 26, 26, 0.9),
+    rgba(43, 36, 36, 0.9)
+  ); /* Gradient background */
+  border-radius: 15px; /* More rounded corners */
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Added transition for background color */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Deeper shadow for depth */
+  cursor: pointer;
+}
+
+.cast_card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+  background: linear-gradient(
+    135deg,
+    #5c5e62,
+    #454b53
+  ); /* Brighter gradient on hover */
+}
+
+.cast_image {
+  width: 100%;
+  height: 65%; /* Adjusted height for image */
+  border-radius: 10px; /* Rounded corners for the image */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  border-bottom: 3px solid #5c5e62; /* Bottom border for image */
+  transition: transform 0.3s; /* Smooth zoom effect */
+}
+
+.cast_image:hover {
+  transform: scale(1.05); /* Zoom in effect on hover */
+}
+
+.cast_info {
+  text-align: center;
+  padding: 10px;
+  color: #f8f9fa; /* Light text color for contrast */
+  height: 35%; /* Adjusts height for info section */
+}
+
+.cast_name {
+  font-family: "Montserrat";
+  font-size: 20px; /* Larger title size */
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: rgb(248, 199, 76); /* Soft light color for name */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+.cast_character {
+  font-size: 15px;
+  font-family: "Montserrat";
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+  /* Softer gray for character name */
+}
+
+/* Responsive Styling */
+@media (max-width: 1024px) {
+  .cast_card {
+    height: 300px; /* Adjust height */
+    width: 200px; /* Adjust width for larger screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .cast_card {
+    height: 270px; /* Adjust height */
+    width: 180px; /* Adjust width for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .cast_card {
+    height: 240px; /* Adjust height */
+    width: 160px; /* Adjust width for smaller screens */
+  }
+
+  .cast_name {
+    font-size: 18px; /* Adjust font size for smaller screens */
+  }
+
+  .cast_character {
+    font-size: 13px; /* Adjust font size */
+  }
+}

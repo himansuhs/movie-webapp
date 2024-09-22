@@ -1,0 +1,105 @@
+/* Basic Reset */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Movie Card Styling */
+.movie-card {
+  background: linear-gradient(
+    135deg,
+    rgba(27, 26, 26, 0.9),
+    rgba(43, 36, 36, 0.9)
+  ); /* Dark gradient background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 320px; /* Slightly wider card */
+  margin: 20px auto; /* Center horizontally */
+  padding: 15px;
+  border-radius: 15px; /* Rounded corners */
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Softer shadow for depth */
+  cursor: pointer;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 10px 20px rgba(37, 35, 35, 0.2); /* Lighter shadow on hover */
+}
+
+/* Image Styling */
+.movies_image {
+  height: 240px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease;
+}
+
+.movie-card:hover .movies_image {
+  transform: scale(1.05); /* Zoom effect on hover */
+}
+
+.movies_info {
+  color: rgb(230, 230, 230); /* Light text for contrast */
+  text-align: center;
+  padding: 10px;
+}
+
+.movies_title {
+  font-family: "Montserrat";
+  font-size: 18px; /* Adjusted title size */
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: rgb(255, 165, 0); /* Bright orange for title */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Subtle text shadow */
+}
+
+.movies_rating {
+  font-size: 16px;
+  font-family: "Montserrat";
+  position: relative;
+  color: rgb(255, 255, 0); /* Bright yellow for rating */
+}
+
+.movies_rating::before {
+  content: "★"; /* Star icon before the rating */
+  color: rgb(255, 255, 0); /* Same color as the rating */
+  margin-right: 5px; /* Space between star and rating */
+}
+
+/* Responsive Styling */
+@media (max-width: 1024px) {
+  .movie-card {
+    max-width: 75%; /* Adjust width for larger screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .movie-card {
+    max-width: 85%; /* Adjust width for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .movies_title {
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+
+  .movies_rating {
+    font-size: 14px; /* Adjust rating size */
+  }
+
+  .movies_image {
+    height: 180px; /* Adjust height for smaller screens */
+  }
+
+  .movie-card {
+    max-width: 95%; /* Adjust width for very small screens */
+  }
+}

@@ -1,0 +1,157 @@
+/* Basic Reset */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Dark Mode Header */
+.nav-header {
+  background: linear-gradient(90deg, #1a1a1a, #333);
+  color: #ffffff; /* White text */
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure header is above other content */
+  box-shadow: 0 2px 4px rgba(15, 14, 14, 0.5); /* Slight shadow for depth */
+}
+
+/* Header Content */
+.nav-header-content {
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Title */
+.nav-title {
+  font-weight: bold;
+  font-size: 24px;
+  color: #ffffff;
+  margin-right: auto;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Right Content */
+.nav-right-section {
+  align-items: center;
+  display: flex;
+}
+
+/* Navigation */
+.nav-menu {
+  display: flex;
+  gap: 20px;
+  padding: 1rem;
+  max-width: max-content;
+}
+
+/* Navigation Links */
+.nav-link {
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0 5px; /* Added padding for better spacing */
+  color: #777272;
+  position: relative;
+  transition: color 0.3s ease;
+  font-family: "Montserrat";
+}
+
+.nav-link:hover {
+  color: #f0c040; /* Highlight color on hover */
+}
+
+/* Search Container */
+.nav-search-container {
+  margin-left: 10px; /* Space between nav and search */
+  display: flex;
+  align-items: center;
+}
+
+.nav-search-input {
+  background-color: #fff8f8; /* Dark gray background for input */
+  color: #0b0b0b; /* Black text */
+  padding: 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Shadow effect */
+}
+
+.nav-search-button {
+  background-color: rgb(60, 59, 59); /* Dark background for button */
+  padding: 10px;
+  color: #ffffff;
+  border-radius: 5px; /* Fully rounded corners */
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-search-button:hover {
+  background-color: #f0c040; /* Lighter shade on hover */
+}
+
+/* Hamburger Button */
+.nav-hamburger {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #ffffff;
+  cursor: pointer;
+  display: none;
+  margin-left: 10px; /* Space between search and hamburger */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .nav-header-content {
+    justify-content: space-between; /* Ensure search and hamburger are spaced */
+    flex-direction: row;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    top: 60px; /* Adjusted to start below header */
+    right: 0; /* Align dropdown to the right */
+    background-color: #333;
+    width: 200px; /* Set a max-width for dropdown */
+    gap: 10px;
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for dropdown */
+    z-index: 1001; /* Ensure dropdown is above content */
+  }
+
+  .nav-menu.menu-visible {
+    display: flex; /* Show the nav when open */
+  }
+
+  .nav-hamburger {
+    display: block; /* Show hamburger on mobile */
+  }
+
+  .nav-search-container {
+    flex-grow: 1; /* Allows the search container to expand */
+    margin: 0 10px; /* Space between title and hamburger */
+  }
+
+  .nav-search-input {
+    width: 100%; /* Full width for input on small screens */
+  }
+}
+
+/* Ensure content is not hidden under the fixed header */
+body {
+  padding-top: 70px; /* Adjust to match header height */
+}
